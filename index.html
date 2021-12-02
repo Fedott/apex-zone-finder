@@ -8,6 +8,8 @@
                 h1{
                     text-align: center;
                     font-family: sans-serif;
+                    color:red;
+                    font-size: 50px;
                 }
                 .container{
                     display: block;
@@ -16,8 +18,7 @@
                     height: 700px;
                     width: 700px;
                     background: url(https://wowmoon.ru/wp-content/uploads/2019/02/80-1.jpg);
-                    z-index: 2;
-                        
+                    z-index: 2;       
                 }
                 .row{
                     height: 20%;
@@ -32,61 +33,41 @@
                     background-color: honeydew;
                     opacity: 0.3;
                 }
-                body{
-                    
+                body{                   
                     background-position: center center;
                     background-attachment: fixed;
                     background-repeat: no-repeat;
                     z-index: 1;
                     background-size: contain;
-                    background-image: url(https://c4.wallpaperflare.com/wallpaper/955/285/242/apex-legends-forest-video-game-art-video-game-characters-fictional-character-hd-wallpaper-preview.jpg);
+                    background-image: url(https://images6.alphacoders.com/992/992033.jpg);
                 }
             </style>
+            
     </head>
     <body>
         <h1>APEX zone finder</h1> 
         <div class="container">
-            <div class="row">
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                
-            </div>
-            <div class="row">
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                
-            </div>
-            <div class="row">
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                
-            </div>
-            <div class="row">
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                
-            </div>
-            <div class="row">
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                <div class="colonne"></div>
-                
-            </div>
         </div>
     </body>
+    <script type="application/javascript">
+        const ROW_COUNT = 20;
+        const COLUMNS = 20;
+        const ROW_HEIGHT = 100/ROW_COUNT;
+        const COLUMNS_WIDTH = 100/COLUMNS;
+        for (let index = 0; index < ROW_COUNT; index++) {
+            let row = document.createElement("div");
+            row.classList.add("row");
+            row.style.height= ROW_HEIGHT + "%";
+                for (let j = 0; j < COLUMNS; j++) {
+                    let col = document.createElement("div");
+                    col.classList.add("colonne");
+                    col.style.width = COLUMNS_WIDTH + "%";
+                    row.append (col);
+                }
 
+
+            let container=document.querySelector(".container");
+            container.append(row);
+        }
+    </script>
 </html>
