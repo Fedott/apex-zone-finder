@@ -16,20 +16,28 @@
         const COLUMNS = 20;
         const ROW_HEIGHT = 100/ROW_COUNT;
         const COLUMNS_WIDTH = 100/COLUMNS;
-        for (let index = 0; index < ROW_COUNT; index++) {
+        for (let x = 0; x < ROW_COUNT; x++) {
             let row = document.createElement("div");
             row.classList.add("row");
-            row.style.height= ROW_HEIGHT + "%";
-                for (let j = 0; j < COLUMNS; j++) {
-                    let col = document.createElement("div");
-                    col.classList.add("colonne");
-                    col.style.width = COLUMNS_WIDTH + "%";
-                    row.append (col);
-                }
+            row.style.height = ROW_HEIGHT + "%";
+
+            for (let y = 0; y < COLUMNS; y++) {
+                let col = document.createElement("div");
+                col.classList.add("colonne");
+                col.style.width = COLUMNS_WIDTH + "%";
+                col.setAttribute("data-x", x);
+                col.setAttribute("data-y", y);
+                col.click = mapClick;
+                row.append (col);
+            }
 
 
             let container=document.querySelector(".container");
             container.append(row);
+        }
+
+        function mapClick(event) {
+            alert ("hello");
         }
     </script>
 </html>
