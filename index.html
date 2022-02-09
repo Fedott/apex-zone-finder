@@ -37,8 +37,49 @@
             container.append(row);
         }
 
+        /**
+         * 
+         * --------------
+         * |000000000|
+         * |000000000|
+         * |000011100|
+         * |000011100|
+         * |000021100|
+         * |000000000|
+         * --------------
+         * 
+         */
+
+        /** [0][1][0][1][][][][][][][][][][] */
+
+        /* const field_y = [ 
+            [false, false, false, false, true],
+            [true, false, false, false, false],
+            [false, false, true, false, false],
+            [false, true, false, false, false],
+            [false, false, false, false, true],
+        ]
+
+        function squrt(number) {
+            return number ^ 2;
+        }
+
+        let s = squrt(4); // 16
+
+        let x = "77";
+        let y = "88";
+
+        let object = {  // 0x847593hbjfdhg4 == 0x123 
+            "data-x": "77", // type: string // size: 4 = 0x123
+            "data-cc": true, // type: bool  // size: 1 == 0x127
+            "data-y": "88", // type: string // size: 4 = 0x128
+        } */
+
         function mapClick(event) {
-            alert(event.target.getAttribute("data-x"));
+            let ss = "data-x" + "data-y"; // "data-xdata-y"
+            let x = event.target.getAttribute("data-x");
+            let y = event.target.getAttribute("data-y");
+            alert(x+" "+y);
         }
     </script>
 </html>
