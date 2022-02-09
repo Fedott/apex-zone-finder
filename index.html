@@ -27,7 +27,8 @@
                 col.style.width = COLUMNS_WIDTH + "%";
                 col.setAttribute("data-x", x);
                 col.setAttribute("data-y", y);
-                col.click = mapClick;
+                // col.onclick = mapClick;
+                button.addEventListener('click', mapClick);
                 row.append (col);
             }
 
@@ -37,7 +38,7 @@
         }
 
         function mapClick(event) {
-            alert ("hello");
+            alert(event.target.getAttribute("data-x"));
         }
     </script>
 </html>
