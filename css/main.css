@@ -35,3 +35,7 @@ body{
     background-size: contain;
     background-image: url(https://images6.alphacoders.com/992/992033.jpg);
 }
+.select{
+    background-color: honeydew;
+    opacity: 0.3;
+}

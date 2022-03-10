@@ -28,7 +28,8 @@
                 col.setAttribute("data-x", x);
                 col.setAttribute("data-y", y);
                 // col.onclick = mapClick;
-                col.addEventListener('click', mapClick);
+                col.addEventListener('click', mapClick);                
+                col.addEventListener('mouseover', mapHover);
                 row.append (col);
             }
 
@@ -37,29 +38,7 @@
             container.append(row);
         }
 
-        /**
-         * 
-         * --------------
-         * |000000000|
-         * |000000000|
-         * |000011100|
-         * |000011100|
-         * |000021100|
-         * |000000000|
-         * --------------
-         * 
-         */
-
-        /** [0][1][0][1][][][][][][][][][][] */
-
-        /* const field_y = [ 
-            [false, false, false, false, true],
-            [true, false, false, false, false],
-            [false, false, true, false, false],
-            [false, true, false, false, false],
-            [false, false, false, false, true],
-        ]
-
+        /*
         function squrt(number) {
             return number ^ 2;
         }
@@ -81,5 +60,35 @@
             let y = event.target.getAttribute("data-y");
             alert("X="+x+" "+"Y="+y);
         }
+        function mapHover(event) {
+            let hoverTargetX = event.target.getAttribute("data-x"); // 7
+            let hoverTargetY = event.target.getAttribute("data-y"); // 10
+            
+            let allCols = document.querySelectorAll(".colonne");
+            // put code her
+            for (let i = 0; i < allCols.length; i++) {
+                let currentCole = allCols[i];
+
+                currentCole.classList.remove("select");
+
+                let currentX = currentCole.getAttribute("data-x");
+                let currentY = currentCole.getAttribute("data-y");
+
+                if (currentX >= hoverTargetX - 1 && currentX <= hoverTargetX + 1 && currentY >= hoverTargetY - 1 && currentY <= hoverTargetY + 1) {
+                    currentCole.classList.add("select");
+                }
+            }
+        }
+
+        /**
+         * [5,6,7,8,3,34,54,6,457,4,7,46] // 13
+         *  0,1,2,3,4,5,6,7,8,9,10,11,12
+         *  i < 13
+         *  i == 12
+         *  i == 13 < 13
+         *
+         *   1b      1b      1b
+         *  '0x2222''0x3333''0x4444'
+         */
     </script>
 </html>
