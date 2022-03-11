@@ -22,7 +22,7 @@ h1{
 .colonne{
     height: 100%;
     width: 20%;
-    float: right;
+    float: left;
 }
 .colonne:hover{
     background-color: honeydew;
