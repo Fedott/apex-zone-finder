@@ -7,11 +7,29 @@
         <link type="text/css" href="css/main.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>APEX zone finder</h1> 
+        <div
+            class="edit-button"
+        >
+            редактировать
+        </div>
+        <h1>APEX zone finder</h1>
         <div class="container">
         </div>
     </body>
     <script type="application/javascript">
+        let isEditMode = false;
+
+        function toggleEditMode() {
+            isEditMode = !isEditMode
+            if (isEditMode == true) {
+            alert("редактирование активированно")
+            }
+            else {alert ("редактирование завершено")
+            }
+        }
+
+        document.querySelector("div.edit-button").addEventListener("click", toggleEditMode)
+
         const ROW_COUNT = 20;
         const COLUMNS = 20;
         const ROW_HEIGHT = 100/ROW_COUNT;
@@ -78,7 +96,6 @@
 
                 let currentX = currentCole.getAttribute("data-x");
                 let currentY = currentCole.getAttribute("data-y");
-                console.log("cur x: " + currentX, "cur y: " + currentY)
 
                 if (
                     currentX >= hoverTargetX - 1
