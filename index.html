@@ -1,4 +1,4 @@
-<!DOCTYPE html lang="ru">
+<!DOCTYPE html lang="ru">/
 <html>
     <head>
         <title>
@@ -60,11 +60,16 @@
             let y = event.target.getAttribute("data-y");
             alert("X="+x+" "+"Y="+y);
         }
+
         function mapHover(event) {
-            let hoverTargetX = event.target.getAttribute("data-x"); // 7
-            let hoverTargetY = event.target.getAttribute("data-y"); // 10
-            
+            let hoverTargetX = parseInt(
+                event.target.getAttribute(
+                    "data-x"
+                )
+            ); // 7
+            let hoverTargetY = parseInt(event.target.getAttribute("data-y")); // 10
             let allCols = document.querySelectorAll(".colonne");
+
             // put code her
             for (let i = 0; i < allCols.length; i++) {
                 let currentCole = allCols[i];
@@ -73,12 +78,26 @@
 
                 let currentX = currentCole.getAttribute("data-x");
                 let currentY = currentCole.getAttribute("data-y");
+                console.log("cur x: " + currentX, "cur y: " + currentY)
 
-                if (currentX >= hoverTargetX - 1 && currentX <= hoverTargetX + 1 && currentY >= hoverTargetY - 1 && currentY <= hoverTargetY + 1) {
+                if (
+                    currentX >= hoverTargetX - 1
+                    && currentX <= hoverTargetX + 1
+                    && currentY >= hoverTargetY - 1
+                    && currentY <= hoverTargetY + 1
+                ) {
                     currentCole.classList.add("select");
                 }
             }
         }
+
+        /**
+         * Стек вызова
+         * | 3 | <- call getAttribute
+         * | 5 | <- call parseInt
+         * | 1 | <- set var value
+         * ____
+         */
 
         /**
          * [5,6,7,8,3,34,54,6,457,4,7,46] // 13
