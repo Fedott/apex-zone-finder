@@ -28,6 +28,14 @@ h1{
     background-color: honeydew;
     opacity: 0.3;
 }
+.edit-mode .colonne:hover{
+    background-color: red;
+    opacity: 0.3;
+}
+.view-mode .colonne:hover{
+    background-color: green;
+    opacity: 0.3;
+}
 body{                   
     background-position: center center;
     background-attachment: fixed;

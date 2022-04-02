@@ -1,4 +1,4 @@
-<!DOCTYPE html lang="ru">/
+<!DOCTYPE html lang="ru">
 <html>
     <head>
         <title>
@@ -6,7 +6,7 @@
         </title>
         <link type="text/css" href="css/main.css" rel="stylesheet" />
     </head>
-    <body>
+    <body class="view-mode">
         <div
             class="edit-button"
         >
@@ -22,9 +22,11 @@
         function toggleEditMode() {
             isEditMode = !isEditMode
             if (isEditMode == true) {
-            alert("редактирование активированно")
-            }
-            else {alert ("редактирование завершено")
+                document.querySelector("body").classList.remove("view-mode")
+                document.querySelector("body").classList.add("edit-mode")
+                alert("редактирование активированно")
+            } else {
+                alert("редактирование завершено")
             }
         }
 
