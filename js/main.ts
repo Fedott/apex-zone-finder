@@ -26,8 +26,8 @@ for (let x = 0; x < ROW_COUNT; x++) {
         let col = document.createElement("div");
         col.classList.add("colonne");
         col.style.width = COLUMNS_WIDTH + "%";
-        col.setAttribute("data-x", x);
-        col.setAttribute("data-y", y);
+        col.setAttribute("data-x", x.toString());
+        col.setAttribute("data-y", y.toString());
         // col.onclick = mapClick;
         col.addEventListener('click', mapClick);                
         col.addEventListener('mouseover', mapHover);
@@ -63,11 +63,7 @@ function mapClick(event) {
 }
 
 function mapHover(event) {
-    let hoverTargetX = parseInt(
-        event.target.getAttribute(
-            "data-x"
-        )
-    ); // 7
+    let hoverTargetX = parseInt(event.target.getAttribute("data-x")); // 7
     let hoverTargetY = parseInt(event.target.getAttribute("data-y")); // 10
     let allCols = document.querySelectorAll(".colonne");
 
@@ -77,8 +73,11 @@ function mapHover(event) {
 
         currentCole.classList.remove("select");
 
-        let currentX = currentCole.getAttribute("data-x");
-        let currentY = currentCole.getAttribute("data-y");
+        let currentXString = currentCole.getAttribute("data-x");
+        let currentYString = currentCole.getAttribute("data-y");
+
+        let currentX = parseInt(currentXString)
+        let currentY = parseInt(currentYString)
 
         if (
             currentX >= hoverTargetX - 1
